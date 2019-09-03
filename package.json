@@ -1,0 +1,23 @@
+{
+  "name": "stonks-ai",
+  "version": "1.0.0",
+  "description": "A stock (stonk) tracker to help manage your portfolio",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/umairnadeem/stonks-ai.git"
+  },
+  "keywords": [
+    "stock",
+    "tracker"
+  ],
+  "author": "Umair Nadeem",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/umairnadeem/stonks-ai/issues"
+  },
+  "homepage": "https://github.com/umairnadeem/stonks-ai#readme"
+}
