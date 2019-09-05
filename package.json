@@ -4,7 +4,10 @@
   "description": "A stock (stonk) tracker to help manage your portfolio",
   "main": "index.js",
   "scripts": {
-    "test": "test"
+    "test": "test",
+    "watch-node": "nodemon --config \"./util/nodemon.json\"/",
+    "watch-ts": "tsc",
+    "start": "concurrently -k -p \"[{name}]\" -n \"TypeScript, Node\" -c \"yello.bold, cyan.bold\" \"npm:watch-*\""
   },
   "repository": {
     "type": "git",
@@ -51,6 +54,8 @@
     "eslint-plugin-react-hooks": "^1.7.0",
     "jest": "^24.9.0",
     "ts-loader": "^6.0.4",
+    "ts-node": "^8.3.0",
+    "tslint": "^5.19.0",
     "webpack": "^4.39.2",
     "webpack-cli": "^3.3.7",
     "webpack-dev-server": "^3.8.0"
