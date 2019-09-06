@@ -1,5 +1,5 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.default = {
-    get: (req, res) => { },
+    get: (req, res) => res.send('Hey'),
 };

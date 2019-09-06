@@ -1,5 +1,5 @@
-import { Request, Response, NextFunction } from 'express';
+import { Request, Response } from 'express';
 
 export default {
-  get: (req: Request, res: Response) => {},
+  get: (req: Request, res: Response) => res.send('Hey'),
 };
