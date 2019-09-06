@@ -1,6 +1,7 @@
 const path = require('path');
 
 module.exports = {
+  mode: 'production',
   entry: path.resolve('src/public'),
   output: {
     path: path.resolve('dist/public'),

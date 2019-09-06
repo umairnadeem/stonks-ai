@@ -7,7 +7,8 @@
     "test": "test",
     "watch-node": "nodemon --config \"./util/nodemon.json\"/",
     "watch-ts": "tsc",
-    "start": "concurrently -k -p \"[{name}]\" -n \"TypeScript, Node\" -c \"yello.bold, cyan.bold\" \"npm:watch-*\""
+    "watch-webpack": "webpack -w",
+    "start-dev": "concurrently -k -p \"[{name}]\" -n \"TypeScript, Node, Webpack\" -c \"yello.bold, cyan.bold\" \"npm:watch-*\""
   },
   "repository": {
     "type": "git",
