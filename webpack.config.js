@@ -1,10 +1,10 @@
 const path = require('path');
 
 module.exports = {
-  entry: path.resolve('src'),
+  entry: path.resolve('src/public'),
   output: {
-    path: path.resolve('lib'),
-    filename: 'index.js',
+    path: path.resolve('dist/public'),
+    filename: 'bundle.js',
   },
   module: {
     rules: [
@@ -12,7 +12,7 @@ module.exports = {
         test: /\.tsx?$/,
         exclude: /node_modules/,
         use: {
-          loader: 'babel-loader',
+          loader: 'ts-loader',
         },
       },
     ],

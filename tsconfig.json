@@ -6,13 +6,14 @@
     "esModuleInterop": false,
     "noImplicitAny": true,
     "moduleResolution": "node",
-    "sourceMap": true,
-    "outDir": "dist",
+    "sourceMap": false,
+    "outDir": "dist/server",
     "baseUrl": ".",
     "paths": {
       "*": ["node_modules/", "src/types/*"]
     }
   },
+  "jsx": "react",
   "include": ["./src/**/*"],
   "exclude": ["./src/public/"]
 }
