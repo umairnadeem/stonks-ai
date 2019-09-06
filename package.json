@@ -24,6 +24,7 @@
   },
   "homepage": "https://github.com/umairnadeem/stonks-ai#readme",
   "dependencies": {
+    "@overnightjs/core": "^1.6.9",
     "express": "^4.17.1",
     "graphql": "^14.5.4",
     "path": "^0.12.7",
