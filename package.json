@@ -8,7 +8,7 @@
     "watch-node": "nodemon --config \"./util/nodemon.json\"/",
     "watch-ts": "tsc",
     "watch-webpack": "webpack -w",
-    "start-dev": "concurrently -k -p \"[{name}]\" -n \"TypeScript, Node, Webpack\" -c \"yello.bold, cyan.bold\" \"npm:watch-*\""
+    "watch": "concurrently -k -p \"[{name}]\" -n \"TypeScript, Node, Webpack\" -c \"yello.bold, cyan.bold\" \"npm:watch-*\""
   },
   "repository": {
     "type": "git",
@@ -37,6 +37,7 @@
     "@babel/core": "^7.5.5",
     "@babel/preset-env": "^7.5.5",
     "@babel/preset-react": "^7.0.0",
+    "@babel/preset-typescript": "^7.6.0",
     "@types/express": "^4.17.1",
     "@types/jest": "^24.0.18",
     "@types/node": "^12.7.4",
@@ -47,7 +48,6 @@
     "concurrently": "^4.1.2",
     "enzyme": "^3.10.0",
     "enzyme-adapter-react-16": "^1.14.0",
-    "eslint": "^6.2.0",
     "eslint-config-airbnb": "^18.0.1",
     "eslint-plugin-import": "^2.18.2",
     "eslint-plugin-jsx-a11y": "^6.2.3",
@@ -57,6 +57,8 @@
     "ts-loader": "^6.0.4",
     "ts-node": "^8.3.0",
     "tslint": "^5.19.0",
+    "tslint-config-airbnb": "^5.11.1",
+    "tslint-react": "^4.0.0",
     "webpack": "^4.39.2",
     "webpack-cli": "^3.3.7",
     "webpack-dev-server": "^3.8.0"

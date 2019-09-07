@@ -1,5 +1,5 @@
 {
-  "extends": "tslint:recommended",
+  "extends": ["tslint:latest", "tslint-react"],
   "rules": {
     "max-line-length": {
       "options": [100]
@@ -9,6 +9,19 @@
     "object-literal-sort-keys": false,
     "ordered-imports": false,
     "quotemark": [true, "single"],
-    "variable-name": [true, "allow-leading-underscore"]
+    "variable-name": [
+      true,
+      "ban-keywords",
+      "check-format",
+      "allow-pascal-case",
+      "allow-leading-underscore",
+      "allow-trailing-underscore"
+    ],
+    "interface-name": false
+  },
+  "linterOptions": {
+    "exclude": [
+      "./node_modules"
+    ]
   }
 }
