@@ -1,10 +1,10 @@
-import React, { FC } from 'react';
+import React from 'react';
 
 interface Props {
   // add props
 }
 
-const App: FC<Props> = () => {
+const App: React.FC<Props> = () => {
   return <div>Tust</div>;
 };
 
