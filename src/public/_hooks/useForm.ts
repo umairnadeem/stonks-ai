@@ -1,8 +1,26 @@
 import React, { useState } from 'react';
 
+/* Types */
+interface FormFields {
+  [key: string]: string;
+}
+
+type ChangeEvent = React.ChangeEvent<HTMLInputElement>;
+
+type MouseEvent = React.MouseEvent;
+
+type onChangeHandler = (e: ChangeEvent) => void;
+
+type submitCallback = (values: FormFields) => void;
+
+type onSubmitHandler = (
+  e: MouseEvent,
+  callback?: submitCallback,
+) => void;
+
 /**
  * A custom hook which holds the state and handleChange/handleSubmit functions for form components
- * @param {Object} initialValues - Initial state for form fields
+ * @param {FormFields} initialValues - Initial state for form fields
  */
 export const useForm = (initialValues: FormFields): [
   FormFields,
@@ -26,19 +44,3 @@ export const useForm = (initialValues: FormFields): [
   return [values, handleChange, handleSubmit];
 };
 
-interface FormFields {
-  [key: string]: string;
-}
-
-type ChangeEvent = React.ChangeEvent<HTMLInputElement>;
-
-type MouseEvent = React.MouseEvent;
-
-type onChangeHandler = (e: ChangeEvent) => void;
-
-type submitCallback = (values: FormFields) => void;
-
-type onSubmitHandler = (
-  e: MouseEvent,
-  callback?: submitCallback,
-) => void;

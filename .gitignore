@@ -1,1 +1,3 @@
 node_modules
+dist/public/server
+dist/public/bundle.js
