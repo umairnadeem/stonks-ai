@@ -9,7 +9,6 @@ const Search: React.FC<Props> = (props: Props) => {
   const [query, setQuery] = useForm({ q: '' });
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    console.log(query);
   };
   return (
     <form onSubmit={handleSubmit}>
