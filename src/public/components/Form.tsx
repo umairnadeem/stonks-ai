@@ -12,7 +12,7 @@ type FormProps<FormFields> = {
 
 interface Handlers<FormFields> {
   onChange: OnChangeHandler<FormFields>;
-};
+}
 
 type OnChangeHandler<FormFields> = <K extends keyof FormFields>(
   event: React.ChangeEvent<HTMLInputElement>,
