@@ -6,9 +6,11 @@ interface Props {
 }
 
 const App: React.FC<Props> = () => {
-  return (<div>
+  return (
+  <div>
     <Search />
-  </div>);
+  </div>
+  );
 };
 
 export default App;

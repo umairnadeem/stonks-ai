@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 /* Types */
 interface FormFields {
-  [key: string]: string;
+  [key: string]: string | number;
 }
 
 type ChangeEvent = React.ChangeEvent<HTMLInputElement>;
