@@ -13,3 +13,7 @@ export interface Action {
   type: string;
   payload: Stock[];
 }
+
+export interface Store {
+  stocks?: [string[], React.Dispatch<Action>];
+}
