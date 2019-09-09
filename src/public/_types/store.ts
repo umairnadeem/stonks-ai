@@ -17,3 +17,7 @@ export interface Action {
 export interface Store {
   stocks?: [string[], React.Dispatch<Action>];
 }
+
+export interface PreStore {
+  [key: string]: (state: State, action: Action) => State | Store;
+}
