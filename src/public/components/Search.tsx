@@ -1,14 +1,14 @@
 import React, { useContext } from 'react';
 import { useForm } from '../_hooks';
-import { Context } from '../_store';
+import { Store } from '../_types';
 
 interface Props {
-  // add props
+  Context: React.Context<Store>;
 }
 
 const Search: React.FC<Props> = (props: Props) => {
   const [query, setQuery] = useForm({ q: '' });
-  const [stocks, dispatch] = useContext(Context);
+  const [stocks, dispatch] = useContext(props.Context).stocks;
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();

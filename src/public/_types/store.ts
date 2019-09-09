@@ -14,7 +14,6 @@ export interface Action {
   payload: Stock[];
 }
 
-/* Experimental */
 export interface Store {
   stocks?: [string[], React.Dispatch<Action>];
 }

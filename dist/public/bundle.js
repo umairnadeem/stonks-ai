@@ -270,11 +270,11 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) *
 /*!***************************************!*\
   !*** ./src/public/_reducers/index.ts ***!
   \***************************************/
-/*! exports provided: stockReducer */
+/*! exports provided: rootReducer */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _stockReducer__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./stockReducer */ \"./src/public/_reducers/stockReducer.ts\");\n/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, \"stockReducer\", function() { return _stockReducer__WEBPACK_IMPORTED_MODULE_0__[\"stockReducer\"]; });\n\n\n\n//# sourceURL=webpack:///./src/public/_reducers/index.ts?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"rootReducer\", function() { return rootReducer; });\n/* harmony import */ var _utils__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../_utils */ \"./src/public/_utils/index.ts\");\n/* harmony import */ var _stockReducer__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./stockReducer */ \"./src/public/_reducers/stockReducer.ts\");\n\n\nvar rootReducer = Object(_utils__WEBPACK_IMPORTED_MODULE_0__[\"combineReducers\"])({\n  stocks: _stockReducer__WEBPACK_IMPORTED_MODULE_1__[\"stockReducer\"]\n});\n\n//# sourceURL=webpack:///./src/public/_reducers/index.ts?");
 
 /***/ }),
 
@@ -294,11 +294,47 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) *
 /*!*************************************!*\
   !*** ./src/public/_store/index.tsx ***!
   \*************************************/
-/*! exports provided: Context, default */
+/*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"Context\", function() { return Context; });\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _reducers__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../_reducers */ \"./src/public/_reducers/index.ts\");\n\n\nvar initialState = {};\n\nvar dispatch = function dispatch() {\n  return '';\n};\n\nvar Context = react__WEBPACK_IMPORTED_MODULE_0___default.a.createContext([initialState, dispatch]);\n/* harmony default export */ __webpack_exports__[\"default\"] = (function (_ref) {\n  var children = _ref.children;\n  var store = Object(react__WEBPACK_IMPORTED_MODULE_0__[\"useReducer\"])(_reducers__WEBPACK_IMPORTED_MODULE_1__[\"stockReducer\"], initialState);\n  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Context.Provider, {\n    value: store\n  }, children);\n});\n\n//# sourceURL=webpack:///./src/public/_store/index.tsx?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _reducers__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../_reducers */ \"./src/public/_reducers/index.ts\");\n\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (function (_ref) {\n  var children = _ref.children;\n  var store = Object(_reducers__WEBPACK_IMPORTED_MODULE_1__[\"rootReducer\"])();\n  var Context = react__WEBPACK_IMPORTED_MODULE_0___default.a.createContext(store);\n  var childrenWithStore = react__WEBPACK_IMPORTED_MODULE_0___default.a.Children.map(children, function (child) {\n    return react__WEBPACK_IMPORTED_MODULE_0___default.a.cloneElement(child, {\n      Context: Context\n    });\n  });\n  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Context.Provider, {\n    value: store\n  }, childrenWithStore);\n});\n\n//# sourceURL=webpack:///./src/public/_store/index.tsx?");
+
+/***/ }),
+
+/***/ "./src/public/_utils/combineReducers.ts":
+/*!**********************************************!*\
+  !*** ./src/public/_utils/combineReducers.ts ***!
+  \**********************************************/
+/*! exports provided: combineReducers */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"combineReducers\", function() { return combineReducers; });\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);\nfunction ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }\n\nfunction _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(source, true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(source).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }\n\nfunction _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }\n\n\nvar combineReducers = function combineReducers(store) {\n  var keys = Object.keys(store);\n  return function () {\n    return keys.reduce(function (accum, key) {\n      return _objectSpread({}, accum, _defineProperty({}, key, Object(react__WEBPACK_IMPORTED_MODULE_0__[\"useReducer\"])(store[key], {})));\n    }, {});\n  };\n};\n\n//# sourceURL=webpack:///./src/public/_utils/combineReducers.ts?");
+
+/***/ }),
+
+/***/ "./src/public/_utils/createContext.ts":
+/*!********************************************!*\
+  !*** ./src/public/_utils/createContext.ts ***!
+  \********************************************/
+/*! exports provided: createContext */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"createContext\", function() { return createContext; });\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);\n\nvar createContext = function createContext(rootReducer) {\n  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createContext(rootReducer());\n};\n\n//# sourceURL=webpack:///./src/public/_utils/createContext.ts?");
+
+/***/ }),
+
+/***/ "./src/public/_utils/index.ts":
+/*!************************************!*\
+  !*** ./src/public/_utils/index.ts ***!
+  \************************************/
+/*! exports provided: combineReducers, createContext */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _combineReducers__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./combineReducers */ \"./src/public/_utils/combineReducers.ts\");\n/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, \"combineReducers\", function() { return _combineReducers__WEBPACK_IMPORTED_MODULE_0__[\"combineReducers\"]; });\n\n/* harmony import */ var _createContext__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./createContext */ \"./src/public/_utils/createContext.ts\");\n/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, \"createContext\", function() { return _createContext__WEBPACK_IMPORTED_MODULE_1__[\"createContext\"]; });\n\n\n\n\n//# sourceURL=webpack:///./src/public/_utils/index.ts?");
 
 /***/ }),
 
@@ -310,7 +346,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) *
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _hooks__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../_hooks */ \"./src/public/_hooks/index.ts\");\n/* harmony import */ var _store__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../_store */ \"./src/public/_store/index.tsx\");\nfunction _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _nonIterableRest(); }\n\nfunction _nonIterableRest() { throw new TypeError(\"Invalid attempt to destructure non-iterable instance\"); }\n\nfunction _iterableToArrayLimit(arr, i) { var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i[\"return\"] != null) _i[\"return\"](); } finally { if (_d) throw _e; } } return _arr; }\n\nfunction _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }\n\n\n\n\n\nvar Search = function Search(props) {\n  var _useForm = Object(_hooks__WEBPACK_IMPORTED_MODULE_1__[\"useForm\"])({\n    q: ''\n  }),\n      _useForm2 = _slicedToArray(_useForm, 2),\n      query = _useForm2[0],\n      setQuery = _useForm2[1];\n\n  var _useContext = Object(react__WEBPACK_IMPORTED_MODULE_0__[\"useContext\"])(_store__WEBPACK_IMPORTED_MODULE_2__[\"Context\"]),\n      _useContext2 = _slicedToArray(_useContext, 2),\n      stocks = _useContext2[0],\n      dispatch = _useContext2[1];\n\n  var handleSubmit = function handleSubmit(e) {\n    e.preventDefault();\n    dispatch({\n      type: 'STOCKS_ADD',\n      payload: [{\n        ticker: 'bruh',\n        data: [[1, 2]],\n        color: '',\n        accent: ''\n      }]\n    });\n  };\n\n  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\"form\", {\n    onSubmit: handleSubmit\n  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\"input\", {\n    type: \"text\",\n    className: \"search\",\n    name: \"query\",\n    onChange: setQuery,\n    placeholder: \"Type a ticker\"\n  }), JSON.stringify(stocks));\n};\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (Search);\n\n//# sourceURL=webpack:///./src/public/components/Search.tsx?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _hooks__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../_hooks */ \"./src/public/_hooks/index.ts\");\nfunction _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _nonIterableRest(); }\n\nfunction _nonIterableRest() { throw new TypeError(\"Invalid attempt to destructure non-iterable instance\"); }\n\nfunction _iterableToArrayLimit(arr, i) { var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i[\"return\"] != null) _i[\"return\"](); } finally { if (_d) throw _e; } } return _arr; }\n\nfunction _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }\n\n\n\n\nvar Search = function Search(props) {\n  var _useForm = Object(_hooks__WEBPACK_IMPORTED_MODULE_1__[\"useForm\"])({\n    q: ''\n  }),\n      _useForm2 = _slicedToArray(_useForm, 2),\n      query = _useForm2[0],\n      setQuery = _useForm2[1];\n\n  var _useContext$stocks = _slicedToArray(Object(react__WEBPACK_IMPORTED_MODULE_0__[\"useContext\"])(props.Context).stocks, 2),\n      stocks = _useContext$stocks[0],\n      dispatch = _useContext$stocks[1];\n\n  var handleSubmit = function handleSubmit(e) {\n    e.preventDefault();\n    dispatch({\n      type: 'STOCKS_ADD',\n      payload: [{\n        ticker: 'bruh',\n        data: [[1, 2]],\n        color: '',\n        accent: ''\n      }]\n    });\n  };\n\n  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\"form\", {\n    onSubmit: handleSubmit\n  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\"input\", {\n    type: \"text\",\n    className: \"search\",\n    name: \"query\",\n    onChange: setQuery,\n    placeholder: \"Type a ticker\"\n  }), JSON.stringify(stocks));\n};\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (Search);\n\n//# sourceURL=webpack:///./src/public/components/Search.tsx?");
 
 /***/ }),
 
