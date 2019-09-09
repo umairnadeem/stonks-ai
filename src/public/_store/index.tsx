@@ -2,17 +2,22 @@ import React, { useReducer } from 'react';
 import { reducer } from '../_reducers';
 import { State, Action } from '../_types';
 
+const initialState = {
+  stocks: [],
+};
+const dispatch = () => '';
+
+export const context = React.createContext<[
+  State,
+  React.Dispatch<Action>,
+]>([initialState, dispatch]);
+
 export default ({ children }) => {
-  const initialState = {
-    stocks: [],
-  };
   const store = useReducer(reducer, initialState);
-  const { Provider } = React.createContext<[State, React.Dispatch<Action>]>(store);
 
   return (
-  <Provider value={store}>
+  <context.Provider value={store}>
     {children}
-  </Provider>
+  </context.Provider>
   );
 };
-

@@ -218,6 +218,30 @@ eval("\n\nif (false) {} else {\n  module.exports = __webpack_require__(/*! ./cjs
 
 /***/ }),
 
+/***/ "./src/public/_constants/index.ts":
+/*!****************************************!*\
+  !*** ./src/public/_constants/index.ts ***!
+  \****************************************/
+/*! exports provided: STOCKS */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _stocks__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./stocks */ \"./src/public/_constants/stocks.ts\");\n/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, \"STOCKS\", function() { return _stocks__WEBPACK_IMPORTED_MODULE_0__[\"STOCKS\"]; });\n\n\n\n//# sourceURL=webpack:///./src/public/_constants/index.ts?");
+
+/***/ }),
+
+/***/ "./src/public/_constants/stocks.ts":
+/*!*****************************************!*\
+  !*** ./src/public/_constants/stocks.ts ***!
+  \*****************************************/
+/*! exports provided: STOCKS */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"STOCKS\", function() { return STOCKS; });\nvar STOCKS = {\n  ADD: 'STOCKS_ADD',\n  REMOVE: 'STOCKS_REMOVE'\n};\n\n//# sourceURL=webpack:///./src/public/_constants/stocks.ts?");
+
+/***/ }),
+
 /***/ "./src/public/_hooks/index.ts":
 /*!************************************!*\
   !*** ./src/public/_hooks/index.ts ***!
@@ -242,6 +266,30 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) *
 
 /***/ }),
 
+/***/ "./src/public/_reducers/index.ts":
+/*!***************************************!*\
+  !*** ./src/public/_reducers/index.ts ***!
+  \***************************************/
+/*! exports provided: reducer */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"reducer\", function() { return reducer; });\n/* harmony import */ var _constants__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../_constants */ \"./src/public/_constants/index.ts\");\nfunction ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }\n\nfunction _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(source, true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(source).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }\n\nfunction _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }\n\n\nvar reducer = function reducer(state, action) {\n  switch (action.type) {\n    case _constants__WEBPACK_IMPORTED_MODULE_0__[\"STOCKS\"].ADD:\n      return _objectSpread({}, state, {\n        stocks: action.payload\n      });\n\n    default:\n      throw new Error('Stock cannot be added.');\n  }\n};\n\n//# sourceURL=webpack:///./src/public/_reducers/index.ts?");
+
+/***/ }),
+
+/***/ "./src/public/_store/index.tsx":
+/*!*************************************!*\
+  !*** ./src/public/_store/index.tsx ***!
+  \*************************************/
+/*! exports provided: context, default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"context\", function() { return context; });\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _reducers__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../_reducers */ \"./src/public/_reducers/index.ts\");\n\n\nvar initialState = {\n  stocks: []\n};\n\nvar dispatch = function dispatch() {\n  return '';\n};\n\nvar context = react__WEBPACK_IMPORTED_MODULE_0___default.a.createContext([initialState, dispatch]);\n/* harmony default export */ __webpack_exports__[\"default\"] = (function (_ref) {\n  var children = _ref.children;\n  var store = Object(react__WEBPACK_IMPORTED_MODULE_0__[\"useReducer\"])(_reducers__WEBPACK_IMPORTED_MODULE_1__[\"reducer\"], initialState);\n  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(context.Provider, {\n    value: store\n  }, children);\n});\n\n//# sourceURL=webpack:///./src/public/_store/index.tsx?");
+
+/***/ }),
+
 /***/ "./src/public/components/Search.tsx":
 /*!******************************************!*\
   !*** ./src/public/components/Search.tsx ***!
@@ -250,7 +298,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) *
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _hooks__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../_hooks */ \"./src/public/_hooks/index.ts\");\nfunction _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _nonIterableRest(); }\n\nfunction _nonIterableRest() { throw new TypeError(\"Invalid attempt to destructure non-iterable instance\"); }\n\nfunction _iterableToArrayLimit(arr, i) { var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i[\"return\"] != null) _i[\"return\"](); } finally { if (_d) throw _e; } } return _arr; }\n\nfunction _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }\n\n\n\n\nvar Search = function Search(props) {\n  var _useForm = Object(_hooks__WEBPACK_IMPORTED_MODULE_1__[\"useForm\"])({\n    q: ''\n  }),\n      _useForm2 = _slicedToArray(_useForm, 2),\n      query = _useForm2[0],\n      setQuery = _useForm2[1];\n\n  var handleSubmit = function handleSubmit(e) {\n    e.preventDefault();\n    console.log(query);\n  };\n\n  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\"form\", {\n    onSubmit: handleSubmit\n  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\"input\", {\n    type: \"text\",\n    className: \"search\",\n    name: \"query\",\n    onChange: setQuery,\n    placeholder: \"Type a ticker\"\n  }));\n};\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (Search);\n\n//# sourceURL=webpack:///./src/public/components/Search.tsx?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _hooks__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../_hooks */ \"./src/public/_hooks/index.ts\");\n/* harmony import */ var _store__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../_store */ \"./src/public/_store/index.tsx\");\nfunction _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _nonIterableRest(); }\n\nfunction _nonIterableRest() { throw new TypeError(\"Invalid attempt to destructure non-iterable instance\"); }\n\nfunction _iterableToArrayLimit(arr, i) { var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i[\"return\"] != null) _i[\"return\"](); } finally { if (_d) throw _e; } } return _arr; }\n\nfunction _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }\n\n\n\n\n\nvar Search = function Search(props) {\n  var _useForm = Object(_hooks__WEBPACK_IMPORTED_MODULE_1__[\"useForm\"])({\n    q: ''\n  }),\n      _useForm2 = _slicedToArray(_useForm, 2),\n      query = _useForm2[0],\n      setQuery = _useForm2[1];\n\n  var _useContext = Object(react__WEBPACK_IMPORTED_MODULE_0__[\"useContext\"])(_store__WEBPACK_IMPORTED_MODULE_2__[\"context\"]),\n      _useContext2 = _slicedToArray(_useContext, 2),\n      stocks = _useContext2[0],\n      dispatch = _useContext2[1];\n\n  var handleSubmit = function handleSubmit(e) {\n    e.preventDefault();\n    dispatch({\n      type: 'STOCKS_ADD',\n      payload: [{\n        ticker: 'bruh',\n        data: [[1, 2]],\n        color: '',\n        accent: ''\n      }]\n    });\n  };\n\n  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\"form\", {\n    onSubmit: handleSubmit\n  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\"input\", {\n    type: \"text\",\n    className: \"search\",\n    name: \"query\",\n    onChange: setQuery,\n    placeholder: \"Type a ticker\"\n  }));\n};\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (Search);\n\n//# sourceURL=webpack:///./src/public/components/Search.tsx?");
 
 /***/ }),
 
@@ -262,7 +310,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var reac
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _Search__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Search */ \"./src/public/components/Search.tsx\");\n\n\n\nvar App = function App() {\n  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\"div\", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Search__WEBPACK_IMPORTED_MODULE_1__[\"default\"], null));\n};\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (App);\n\n//# sourceURL=webpack:///./src/public/components/index.tsx?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _Search__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Search */ \"./src/public/components/Search.tsx\");\n/* harmony import */ var _store__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../_store */ \"./src/public/_store/index.tsx\");\n\n\n\n\nvar App = function App() {\n  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\"div\", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_store__WEBPACK_IMPORTED_MODULE_2__[\"default\"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Search__WEBPACK_IMPORTED_MODULE_1__[\"default\"], null)));\n};\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (App);\n\n//# sourceURL=webpack:///./src/public/components/index.tsx?");
 
 /***/ }),
 

@@ -1,5 +1,6 @@
 import React from 'react';
 import Search from './Search';
+import Store from '../_store';
 
 interface Props {
   // add props
@@ -8,7 +9,9 @@ interface Props {
 const App: React.FC<Props> = () => {
   return (
   <div>
-    <Search />
+    <Store>
+      <Search />
+    </Store>
   </div>
   );
 };
