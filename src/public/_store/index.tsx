@@ -4,7 +4,7 @@ import { Store } from '../_types';
 
 const initialState = {};
 
-export const context = React.createContext<Store>(rootReducer);
+export const context = React.createContext<Partial<Store>>(rootReducer);
 
 export default ({ children }) => {
   return (
