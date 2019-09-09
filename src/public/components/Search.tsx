@@ -7,14 +7,14 @@ interface Props {
 }
 
 const Search: React.FC<Props> = (props: Props) => {
-  const [query, setQuery] = useForm({ q: '' });
+  const [{ ticker }, setQuery] = useForm({ ticker: '' });
   const [stocks, dispatch] = useContext(props.Context).stocks;
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     dispatch({
       type: 'STOCKS_ADD',
-      payload: [{ ticker: 'bruh', data: [[1, 2]], color: '', accent: '' }]
+      payload: [{ ticker, data: [[1, 2]], color: '', accent: '' }],
     });
   };
   return (
@@ -22,7 +22,7 @@ const Search: React.FC<Props> = (props: Props) => {
       <input
         type='text'
         className='search'
-        name='query'
+        name='ticker'
         onChange={setQuery}
         placeholder='Type a ticker'
       />

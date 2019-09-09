@@ -1,9 +1,11 @@
+import { ReactText } from 'react';
+
 export interface State {
   stocks?: Stock[];
 }
 
 export interface Stock {
-  ticker: string;
+  ticker: string | ReactText;
   data: Array<[number, number]>;
   color: string;
   accent: string;
