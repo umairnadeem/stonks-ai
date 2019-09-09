@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import { useForm } from '../_hooks';
-import { context } from '../_store';
+import { Context } from '../_store';
 
 interface Props {
   // add props
@@ -8,7 +8,7 @@ interface Props {
 
 const Search: React.FC<Props> = (props: Props) => {
   const [query, setQuery] = useForm({ q: '' });
-  const [stocks, dispatch] = useContext(context);
+  const [stocks, dispatch] = useContext(Context);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -26,6 +26,7 @@ const Search: React.FC<Props> = (props: Props) => {
         onChange={setQuery}
         placeholder='Type a ticker'
       />
+      {JSON.stringify(stocks)}
     </form>
   );
 };

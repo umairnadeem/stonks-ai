@@ -1,5 +1,5 @@
 export interface State {
-  stocks: Stock[];
+  stocks?: Stock[];
 }
 
 export interface Stock {
@@ -14,6 +14,7 @@ export interface Action {
   payload: Stock[];
 }
 
+/* Experimental */
 export interface Store {
   stocks?: [string[], React.Dispatch<Action>];
 }

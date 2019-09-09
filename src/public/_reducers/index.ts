@@ -1,7 +1,2 @@
-import stocks from './stockReducer';
-import { combineReducers } from '../_utils';
-import { Store } from '../_types';
+export * from './stockReducer';
 
-export const rootReducer: Store = combineReducers({
-  stocks,
-});
