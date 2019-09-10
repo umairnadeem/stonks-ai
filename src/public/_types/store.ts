@@ -21,7 +21,7 @@ export interface Store {
 }
 
 export interface PreStore {
-  [key: string]: (state: State, action: Action) => State | Store;
+  [key: string]: (state: State, action: Action) => any;
 }
 
 export type Reducer = (state: State, action: Action) => State;

@@ -1,10 +1,10 @@
-import { State, Action } from '../_types';
+import { State, Action, Stock } from '../_types';
 import { STOCKS } from '../_constants';
 
-export const stockReducer = (state: State, action: Action): State => {
+export const stockReducer = (state: State, action: Action): Stock[] => {
   switch (action.type) {
     case STOCKS.ADD:
-      return { ...state, stocks: action.payload };
+      return action.payload;
     default:
       throw new Error('Stock cannot be added.');
   }
