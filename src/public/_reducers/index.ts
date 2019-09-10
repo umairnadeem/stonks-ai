@@ -4,4 +4,3 @@ import { stockReducer as stocks } from './stockReducer';
 export const rootReducer = combineReducers({
   stocks,
 });
-// export * from './stockReducer';
