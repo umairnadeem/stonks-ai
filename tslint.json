@@ -8,7 +8,7 @@
     "no-consecutive-blank-lines": false,
     "object-literal-sort-keys": false,
     "ordered-imports": false,
-    "quotemark": [true, "single"],
+    "quotemark": false,
     "variable-name": [
       true,
       "ban-keywords",
@@ -17,7 +17,7 @@
       "allow-leading-underscore",
       "allow-trailing-underscore"
     ],
-    "interface-name": false
+    "interface-name": false,
   },
   "linterOptions": {
     "exclude": [

@@ -17,9 +17,13 @@ export interface Action {
 }
 
 export interface Store {
-  stocks?: [string[], React.Dispatch<Action>];
+  stocks?: (state: State, action: Action) => State;
 }
 
 export interface PreStore {
   [key: string]: (state: State, action: Action) => State | Store;
 }
+
+export type Reducer = (state: State, action: Action) => State;
+
+export type ReducerHook = [State, React.Dispatch<Action>];

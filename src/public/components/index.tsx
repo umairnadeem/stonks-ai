@@ -8,11 +8,11 @@ interface Props {
 
 const App: React.FC<Props> = () => {
   return (
-  <div>
-    <Store>
-      <Search />
-    </Store>
-  </div>
+    <div>
+      <Store>
+        <Search />
+      </Store>
+    </div>
   );
 };
 

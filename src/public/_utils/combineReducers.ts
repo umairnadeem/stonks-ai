@@ -1,11 +1,11 @@
-import { useReducer } from 'react';
-import { Store, PreStore } from '../_types';
+// import { useReducer } from 'react';
+import { PreStore, Reducer } from '../_types';
 
-export const combineReducers = (store: PreStore): () => Store => {
+export const combineReducers = (store: PreStore): Reducer => {
   const keys = Object.keys(store);
-  return () => keys.reduce(
+  return (state, action) => keys.reduce(
     (accum, key) => ({
       ...accum,
-      [key]: useReducer(store[key], {}),
+      [key]: store[key](state, action),
     }), {});
 };

@@ -1,16 +1,17 @@
 import React, { useReducer } from 'react';
 import { rootReducer } from '../_reducers';
-import { State, Action, Store } from '../_types';
+
+const initialState = {
+  stocks: [],
+};
+
+export const Context: React.Context<any> = React.createContext(initialState)
 
 export default ({ children }) => {
-  const store = rootReducer();
-  const Context = React.createContext<Store>(store);
-  const childrenWithStore = React.Children.map(children, (child) =>
-  React.cloneElement(child, { Context }),
-);
+  const reducer = useReducer(rootReducer, initialState)
   return (
-    <Context.Provider value={store}>
-      {childrenWithStore}
+    <Context.Provider value={reducer}>
+      {children}
     </Context.Provider>
   );
 };
