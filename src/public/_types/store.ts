@@ -13,7 +13,7 @@ export interface Stock {
 
 export interface Action {
   type: string;
-  payload: Stock[];
+  payload: Stock;
 }
 
 export interface Store {

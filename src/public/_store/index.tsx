@@ -1,7 +1,9 @@
 import React, { useReducer } from 'react';
 import { rootReducer } from '../_reducers';
 
-const initialState = {};
+const initialState = {
+  stocks: [],
+};
 
 export const Context: React.Context<any> = React.createContext(initialState);
 
