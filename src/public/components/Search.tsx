@@ -9,7 +9,7 @@ interface Props {
 }
 const Search: React.FC<Props> = (props) => {
   const [{ ticker }, setForm] = useForm({ ticker: '' });
-  const [stocks, dispatch] = useContext<ReducerHook>(Context);
+  const [state, dispatch] = useContext<ReducerHook>(Context);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -25,7 +25,7 @@ const Search: React.FC<Props> = (props) => {
         onChange={setForm}
         placeholder="Type a ticker"
       />
-      {JSON.stringify(stocks)}
+      {JSON.stringify(state)}
     </form>
   );
 };
