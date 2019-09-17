@@ -5,7 +5,7 @@ export const submitForm = (ticker, dispatch) => {
     () =>
       dispatch({
         type: STOCKS.ADD,
-        payload: { ticker, data: [2, 3, 4, 6, 2, 34, 32, 99] }
+        payload: { ticker, data: (new Array(100)).fill(0).map(() => Math.random()) },
       }),
     700,
   );

@@ -6,7 +6,7 @@ const Graphs = ({ stocks }) => {
   return (
     <div>
       {stocks.map(({ ticker, data }) => (
-        <LineGraph key={ticker} data={data} />
+        <LineGraph key={ticker} data={data} smoothing="0.4" hover={true}/>
       ))}
     </div>
   );
