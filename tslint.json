@@ -9,6 +9,7 @@
     "object-literal-sort-keys": false,
     "ordered-imports": false,
     "quotemark": false,
+    "jsx-no-multiline-js": false,
     "variable-name": [
       true,
       "ban-keywords",
