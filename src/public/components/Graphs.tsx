@@ -1,14 +1,17 @@
 import React from 'react';
 import { Stock } from '../_types';
 import LineGraph from 'react-line-graph';
+import { Container, Main } from './styled';
 
 const Graphs = ({ stocks }) => {
   return (
-    <div>
+    <Main>
       {stocks.map(({ ticker, data }) => (
-        <LineGraph key={ticker} data={data} smoothing="0.4" hover={true}/>
+        <Container key={ticker}>
+          <LineGraph data={data} smoothing="0.4" hover={true} />
+        </Container>
       ))}
-    </div>
+    </Main>
   );
 };
 

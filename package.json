@@ -33,6 +33,7 @@
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
     "react-line-graph": "^1.0.6",
+    "styled-components": "^4.3.2",
     "typescript": "^3.6.2"
   },
   "devDependencies": {
